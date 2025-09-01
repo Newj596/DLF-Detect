@@ -1,8 +1,8 @@
 # 🌫️ DLF-Detect: Boosting  Object Detection Performance in Foggy Days by Unsupervised Image Restoration
 ## 🛠️ Overall Framework
-![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/ovf2.png)
 This work presents a novel Dual-stream Learning Framework (DLF) that incorporates a Zero-referenced Image Dehazing subnet (ZIDnet) into a detector. By designing image restoration losses based on the atmosphere scattering model, ZIDnet can work in an unsupervised manner. The unsupervised design significantly expands the applicability of multi-task learning from synthetic image pairs to real-world scenarios where only hazy images are available. Additionally, a feature selection module is newly introduced to emphasize informative features while suppressing noisy responses under foggy conditions. Furthermore, to mitigate conflicts between the image restoration and object detection losses during joint training, we introduce a dynamic task balancing method to automatically adjust the contributions of the image restoration and object detection tasks.
-## 🧠 Methods 
+![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/ovf2.png)
+## 🧠 Contributions
 1) We present a multi-task learning network that improves the accuracy of foggy object detection by unsupervised image restoration.
 
 2) We design an unsupervised restoration subnet based on ASM. Three prior-based loss functions are adopted to ensure that DLF learns haze-free features.
@@ -15,17 +15,16 @@ This work presents a novel Dual-stream Learning Framework (DLF) that incorporate
 ![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/rtts.png)
 
 ## ⚙️ Installation
-Following the installation instructions as YOLO v7 [link](https://github.com/ultralytics/yolov5) 
+Following the installation instructions as YOLO v7 [link](https://github.com/WongKinYiu/yolov7) 
 ```
-cd FiLMN\
+cd DLF-Detect\
 pip install -r requirements.txt
 ```
 ## 📦 Datasets
 
-| RTTS      | ExDark      |
+| RTTS      | Foggy-Cityscapes      |
 |------------|------------|
-| [link](https://pan.baidu.com/s/1IYkX2B31rSkji55-12TZVg?pwd=yba2) | [link](https://pan.baidu.com/s/1alIMr8ReBvQStX8Mk3VCsg?pwd=7wit) |
-
+| [link](https://pan.baidu.com/s/1IYkX2B31rSkji55-12TZVg?pwd=yba2) | [link](https://pan.baidu.com/s/1yXBVsci0IVGf78p6mA7Rlw?pwd=a56q) |
 ## 🚀 Training FiLMN-S/FiLMN-X with C2F on RTTS/ExDark Dataset
 ### Coarse Training
 ```
