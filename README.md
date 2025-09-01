@@ -25,12 +25,12 @@ pip install -r requirements.txt
 | RTTS      | Foggy-Cityscapes      |
 |------------|------------|
 | [link](https://pan.baidu.com/s/1IYkX2B31rSkji55-12TZVg?pwd=yba2) | [link](https://pan.baidu.com/s/1yXBVsci0IVGf78p6mA7Rlw?pwd=a56q) |
-## 🚀 Training DFL on RTTS/ExDark Dataset
+## 🚀 Training DFL on RTTS/Foggy-CityScapes Dataset
 ```
 python train.py --weights yolov7_training.pt --cfg yolov7.yaml --data hybrid_rtts.yaml/hybrid_fogcity.yaml --epochs 30 --hyp data/hyp.srach.custom.yaml --device 0
 ```
 
-## 🎯 Validating DFL on RTTS/ExDark Dataset
+## 🎯 Validating DFL on RTTS/Foggy-CityScapes Dataset
 ```
 python val.py --weights best.pt --cfg yolov7.yaml --data hybrid_rtts.yaml/hybrid_fogcity.yaml  --device 0
 ```
