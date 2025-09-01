@@ -3,10 +3,11 @@
 ![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/ovf2.png)
 This work presents a novel Dual-stream Learning Framework (DLF) that incorporates a Zero-referenced Image Dehazing subnet (ZIDnet) into a detector. By designing image restoration losses based on the atmosphere scattering model, ZIDnet can work in an unsupervised manner. The unsupervised design significantly expands the applicability of multi-task learning from synthetic image pairs to real-world scenarios where only hazy images are available. Additionally, a feature selection module is newly introduced to emphasize informative features while suppressing noisy responses under foggy conditions. Furthermore, to mitigate conflicts between the image restoration and object detection losses during joint training, we introduce a dynamic task balancing method to automatically adjust the contributions of the image restoration and object detection tasks.
 ## 🧠 Methods 
-![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/fs.jpg)![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/res1.png)
-a) We propose FiLMN, a novel architecture that dynamically partitions weather-degraded inputs into latent sub-domains and employs specialized expert modules to handle each sub-domain. A meta-gating mechanism adaptively fuses expert outputs, enabling precise feature recalibration for diverse degradation patterns. The domain adaptation error bound of FiLMN is theoretically given. In addition, a focal distillation loss is formulated to handle hard examples in dynamic weather conditions.
+1) We present a multi-task learning network that improves the accuracy of foggy object detection by unsupervised image restoration.
 
-b) To resolve learning rate conflicts between pre-trained backbones and domain-specific components, we introduce a two-stage training paradigm, called C2F for short. In the coarse stage, domain-aware modules (experts and gating networks) are trained at high learning rates to rapidly capture degradation-specific features. In the fine stage, the full network is learned at a reduced learning rate, ensuring stable convergence while preserving global contextual coherence. 
+2) We design an unsupervised restoration subnet based on ASM. Three prior-based loss functions are adopted to ensure that DLF learns haze-free features.
+
+3) We propose a novel feature selection module for robust object detection, which retains informative features and suppresses noisy ones.
 
 ## 🌁 Visual Results on Foggy-Cityscapes Dataset (Synthetic Fog)
 ![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/fogcity.png)
