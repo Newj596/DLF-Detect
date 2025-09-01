@@ -10,24 +10,13 @@ b) To resolve learning rate conflicts between pre-trained backbones and domain-s
 
 c) We propose a multi-iterative optimization method called DTS on the basis of the golden section selection mechanism. It replaces empirically predefined thresholds through a multi-stage iterative optimization framework to search the best confidence threshold for post-processing. This approach dynamically adapts to varying degradation patterns in adverse weather conditions, enhancing detection performance without manual parameter tuning and additional task-special subnet design required by existing methods.
 
-## 🌁 Visual Results on RTTS Dataset (Foggy)
-![](https://raw.githubusercontent.com/Newj596/FiLMN/main/imgs/fog_result.png)
-## 🌙 Visual Results on RTTS Dataset (Low-light)
-![](https://raw.githubusercontent.com/Newj596/FiLMN/main/imgs/dark_result.png)
-
-## 🌐 Real-World Applications
-![](https://raw.githubusercontent.com/Newj596/FiLMN/main/imgs/usv_res.png)
-Clear Daytime
-Fig. (a) illustrates our method's effectiveness in tracking surface vessels under ideal visibility. The domain-mixed expert system maintains stable detection confidences across varying boat orientations and wave patterns. The detection efficacy in this scenario originates from the pronounced chromatic and textural saliency of objects, which establishes robust feature discriminability for reliable classification. Key advantages include reduced sensitivity to sun glares and wake interference compared to conventional approaches, as evidenced by the consistent bounding box accuracy throughout the temporal sequence.
-
-Foggy Conditions
-As shown in Fig. (b), our architecture achieves reliable detection in reduced visibility conditions. In such scenarios, objects are subject to intense backlighting and haze occlusion, resulting in silhouette-like appearances with severely degraded color and texture information, thereby leading to the breakdown of conventional detection algorithms.  Our proposed FiLMN addresses the problems by preserving critical edge information while suppressing fog-induced artifacts, enabling accurate target localization even when vessel contours become partially obscured.  
-
-Low-Light Night
-Detection results in Fig. (c) demonstrate FiLMN's capability in nighttime operations. Under nighttime conditions, objects suffer from significant feature distribution shifts caused by background light interference, thereby rendering domain-specific training weights inadequate for such dynamically varying scenarios. In contrast, FiLMN adopts a domain-agnostic framework that dynamically selects attention mechanisms based on evolving feature patterns to recalibrate critical representations, demonstrating its enhanced robustness in these challenging environments. The framework successfully handles illumination variations and dark channel noise, maintaining detection consistency across different light levels. 
+## 🌁 Visual Results on Foggy-Cityscapes Dataset (Synthetic Fog)
+![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/fogcity.png)
+## 🌙 Visual Results on RTTS Dataset (Real Fof)
+![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/rtts.png)
 
 ## ⚙️ Installation
-Following the installation instructions as YOLO v5 [link](https://github.com/ultralytics/yolov5) 
+Following the installation instructions as YOLO v7 [link](https://github.com/ultralytics/yolov5) 
 ```
 cd FiLMN\
 pip install -r requirements.txt
