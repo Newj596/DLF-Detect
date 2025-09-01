@@ -1,6 +1,6 @@
-# 🌫️ DFL-Detect: Boosting  Object Detection Performance in Foggy Days by Unsupervised Image Restoration
+# 🌫️ DLF-Detect: Boosting  Object Detection Performance in Foggy Days by Unsupervised Image Restoration
 ## 🛠️ Overall Framework
-![](https://raw.githubusercontent.com/Newj596/DFL-Detect/main/ovf2.png)
+![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/ovf2.png)
 This work presents a **Fine-grained Latent-domain Mixture-of-expert Network (FiLMN)** to achieve robust object detection in dynamic weather conditions.  We dynamically allocate attention to degradation-specific features through a gating network. A theoretical error bound for domain adaptation is provided. Additionally, a focal localization loss is newly proposed to mine hard examples in extreme weather. Moreover, a two-phase training strategy is introduced to resolve learning rate conflicts between fixed backbones and adaptive experts. Furthermore, we propose a novel dynamic threshold search algorithm for post-processing, which eliminates manual parameter tuning limitations. Evaluations on RTTS and ExDark benchmarks demonstrate marked improvements with gains of **3.8% mAP** in dense fog and **2.0%** in extremely dark environments over state-of-the-art methods. Extensive real-world validation on unmanned surface vehicles in diverse environments demonstrates FiLMN’s generalization capability in the wild.
 ## 🧠 Methods 
 ![](https://raw.githubusercontent.com/Newj596/FiLMN/main/imgs/methods.png)
