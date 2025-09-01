@@ -27,17 +27,17 @@ pip install -r requirements.txt
 | [link](https://pan.baidu.com/s/1IYkX2B31rSkji55-12TZVg?pwd=yba2) | [link](https://pan.baidu.com/s/1yXBVsci0IVGf78p6mA7Rlw?pwd=a56q) |
 ## 🚀 Training DFL on RTTS/ExDark Dataset
 ```
-python train.py --weights yolov5s.pt/yolov5x.pt --cfg yolov5s.yaml/yolov5x.yaml --data fog.yaml/light.yaml --epochs 30 --freeze [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] --device 0
+python train.py --weights yolov7_training.pt --cfg yolov7.yaml --data hybrid_rtts.yaml/hybrid_fogcity.yaml --epochs 30 --hyp data/hyp.srach.custom.yaml --device 0
 ```
 
 ## 🎯 Validating DFL on RTTS/ExDark Dataset
 ```
-python val.py --weights best.pt --cfg yolov5s.yaml/yolov5x.yaml --data fog.yaml/light.yaml --task golden_search --device 0
+python val.py --weights best.pt --cfg yolov7.yaml --data hybrid_rtts.yaml/hybrid_fogcity.yaml  --device 0
 ```
 
 ## 🔍 Detecting Objects with DFL
 ```
-python detect.py --weights best.pt --cfg yolov5s.yaml/yolov5x.yaml --data fog.yaml/light.yaml --source \your_path --device 0 --conf-thres [confidence determined by DTS]
+python detect.py --weights best.pt --cfg yolov7.yaml --data hybrid_rtts.yaml/hybrid_fogcity.yaml --source \your_path --device 0 
 ```
 
 ## ⚙️ Implementation Details
