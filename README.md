@@ -25,25 +25,20 @@ pip install -r requirements.txt
 | RTTS      | Foggy-Cityscapes      |
 |------------|------------|
 | [link](https://pan.baidu.com/s/1IYkX2B31rSkji55-12TZVg?pwd=yba2) | [link](https://pan.baidu.com/s/1yXBVsci0IVGf78p6mA7Rlw?pwd=a56q) |
-## 🚀 Training FiLMN-S/FiLMN-X with C2F on RTTS/ExDark Dataset
-### Coarse Training
+## 🚀 Training DFL on RTTS/ExDark Dataset
 ```
 python train.py --weights yolov5s.pt/yolov5x.pt --cfg yolov5s.yaml/yolov5x.yaml --data fog.yaml/light.yaml --epochs 30 --freeze [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] --device 0
 ```
-### Fine Training
-```
-python train.py --weights best.pt --cfg yolov5s.yaml/yolov5x.yaml --data fog.yaml/light.yaml --epochs 10 --device 0
-```
 
-## 🎯 Validating FiLMN-S/FiLMN-X with DTS on RTTS/ExDark Dataset
+## 🎯 Validating DFL on RTTS/ExDark Dataset
 ```
 python val.py --weights best.pt --cfg yolov5s.yaml/yolov5x.yaml --data fog.yaml/light.yaml --task golden_search --device 0
 ```
 
-## 🔍 Detecting Objects with FiLMN-S/FiLMN-X
+## 🔍 Detecting Objects with DFL
 ```
 python detect.py --weights best.pt --cfg yolov5s.yaml/yolov5x.yaml --data fog.yaml/light.yaml --source \your_path --device 0 --conf-thres [confidence determined by DTS]
 ```
 
 ## ⚙️ Implementation Details
-The proposed FiLMN is written in PyTorch and based on the YOLO v5 branch of the ultralytics repository. Backbones are pre-trained on COCO dataset. Unless otherwise specified, YOLO v5x is employed as the backbone network throughout this work. To address the trade-off between computational precision and processing latency, we adopt FiLMN with five specialized attention networks. The modulation factor $\gamma$ in focal localization loss is empirically set to 1.2. Since FiLMN is trained in a two-step manner offered by C2F, we first train the attention blocks and detection head with a learning rate of 0.01. Then we fine-tune the overall framework with a lower learning rate of 0.0001. We employ the SGD optimizer to train the proposed network. The training procedure is conducted on an Nvidia RTX4070 GPU with a batch size of 8. In the testing phase, a, b, and \epsilon in DTS are empirically set as 0.01, 0.5, and 0.001.
+The backbone network for DLF is a modified YOLOv7 with FSM. During training, images are resized to a fixed size of 640 for RTTS. Since Foggy-Cityscapes contains images that have a higher resolution, they are resized to 1024 for training and testing. Various data augmentations are employed, e.g., horizontal flipping, multi-scale cropping, image transformation, and image mosaic. Parameters of DLF are initialized with pre-trained weights on the COCO dataset and trained with Adam \cite{kingma2014adam} in 30 epochs. For DLF tested on RTTS, the learning rate starts with 0.0001 and linearly reduces to 0.00001. The batch size is set as 24. While tested on Foggy-Cityscapes, DLF has an initial learning rate of 0.0005 and a batch size of 8. We use PyTorch for our experiments and run it on a single Nvidia RTX 4090 card.
