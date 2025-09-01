@@ -42,7 +42,7 @@ python train.py --weights yolov7_training.pt --cfg yolov7.yaml --data hybrid_rtt
 python val.py --weights best.pt --cfg yolov7.yaml --data hybrid_rtts.yaml/hybrid_fogcity.yaml  --device 0
 ```
 
-## 🔍 Detecting Objects with DFL
+## 🔍 Image Restoration and Detecting Objects with DFL
 ```
 python detect.py --weights best.pt --cfg yolov7.yaml --data hybrid_rtts.yaml/hybrid_fogcity.yaml --source \your_path --device 0 
 ```
