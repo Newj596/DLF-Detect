@@ -1,0 +1,4 @@
+{
+    "light_values": [],
+    "parameter_values": []
+}
