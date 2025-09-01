@@ -12,7 +12,7 @@ c) We propose a multi-iterative optimization method called DTS on the basis of t
 
 ## 🌁 Visual Results on Foggy-Cityscapes Dataset (Synthetic Fog)
 ![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/fogcity.png)
-## 🌙 Visual Results on RTTS Dataset (Real Fof)
+## 🌙 Visual Results on RTTS Dataset (Real Fog)
 ![](https://raw.githubusercontent.com/Newj596/DLF-Detect/main/rtts.png)
 
 ## ⚙️ Installation
